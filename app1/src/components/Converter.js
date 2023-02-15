@@ -27,10 +27,10 @@ export default function Converter() {
       case "milesTokm":
         setResult(milesTokm(inputUnit));
         break;
-      case "feetTom":
+      case "feetTometres":
         setResult(feetTometres(inputUnit));
         break;
-      case "mTofeet":
+      case "metresTofeet":
         setResult(metresTofeet(inputUnit));
         break;
       case "cmToinches":
