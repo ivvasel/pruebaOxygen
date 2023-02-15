@@ -2,9 +2,7 @@ import React from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Cross from "./icons/Cross";
 
-export default function Saved() {
-  const [saved, setSaved] = useLocalStorage("saved", []);
-
+export default function ListFavs({ saved, setSaved }) {
   const handleDelete = (order) => {
     const newSaved = saved.filter((item, index) => {
       console.log(order, index);

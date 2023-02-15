@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Save from "./icons/Save";
 import { conversiones } from "../utils/conversiones";
 import useLocalStorage from "../hooks/useLocalStorage";
+import ListFavs from "./ListFavs";
 
 export default function Converter() {
   const [conversion, setConversion] = useState(conversiones[0]);
@@ -89,6 +90,7 @@ export default function Converter() {
           <Save />
         </button>
       </div>
+      <ListFavs saved={saved} setSaved={setSaved} />
     </div>
   );
 }
