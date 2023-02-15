@@ -26,10 +26,10 @@ export default function Converter() {
         setResult(milesTokm(inputUnit));
         break;
       case "feetTom":
-        setResult(feetTom(inputUnit));
+        setResult(feetTometres(inputUnit));
         break;
       case "mTofeet":
-        setResult(mTofeet(inputUnit));
+        setResult(metresTofeet(inputUnit));
         break;
       case "cmToinches":
         setResult(cmToinches(inputUnit));
@@ -42,10 +42,17 @@ export default function Converter() {
     }
   };
 
+  const handleReverse = () => {
+    const inverted = `${conversion.to}To${conversion.from}`;
+    const reverse = conversiones.find((item) => item.value === inverted);
+    setConversion(reverse);
+    setInputUnit(result);
+  };
+
   const kmTomiles = (km) => (km / 1.609).toFixed(2);
   const milesTokm = (miles) => (miles * 1.609).toFixed(2);
-  const feetTom = (feet) => (feet / 3.281).toFixed(2);
-  const mTofeet = (m) => (m * 3.281).toFixed(2);
+  const feetTometres = (feet) => (feet / 3.281).toFixed(2);
+  const metresTofeet = (m) => (m * 3.281).toFixed(2);
   const cmToinches = (cm) => (cm / 2.54).toFixed(2);
   const inchesTocm = (inches) => (inches * 2.54).toFixed(2);
 
@@ -66,9 +73,10 @@ export default function Converter() {
           {conversion.from}
         </div>
         <div>{`${result} ${conversion.to}`}</div>
-        <div>
+        <button onClick={handleReverse}>reserve</button>
+        <button>
           <Save />
-        </div>
+        </button>
       </div>
     </div>
   );

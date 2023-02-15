@@ -12,13 +12,13 @@ export const conversiones = [
     to: "km",
   },
   {
-    value: "feetTom",
+    value: "feetTometres",
     name: "pies a metros",
     from: "feet",
     to: "metres",
   },
   {
-    value: "mTofeet",
+    value: "metresTofeet",
     name: "metros a pies",
     from: "metres",
     to: "feet",
