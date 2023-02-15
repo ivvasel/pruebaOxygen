@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Save from "./icons/Save";
 import { conversiones } from "../utils/conversiones";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Converter() {
   const [conversion, setConversion] = useState(conversiones[0]);
   const [inputUnit, setInputUnit] = useState(0);
   const [result, setResult] = useState("");
+  const [saved, setSaved] = useLocalStorage("saved", []);
 
   useEffect(() => {
     selectFormula(conversion);
@@ -49,21 +51,13 @@ export default function Converter() {
   };
 
   const hanldeSave = () => {
-    var saved;
-    const newSaved = {
+    const newRegister = {
       from: conversion.from,
       to: conversion.to,
       unit: inputUnit,
       result: result,
     };
-    try {
-      saved = JSON.parse(localStorage.getItem("saved"));
-      console.log(saved);
-      saved.push(newSaved);
-      localStorage.setItem("saved", JSON.stringify(saved));
-    } catch (e) {
-      localStorage.setItem("saved", JSON.stringify([newSaved]));
-    }
+    setSaved([...saved, newRegister]);
   };
 
   const kmTomiles = (km) => (km / 1.609).toFixed(2);
