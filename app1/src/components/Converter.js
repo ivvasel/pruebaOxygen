@@ -9,7 +9,6 @@ export default function Converter() {
 
   useEffect(() => {
     selectFormula(conversion);
-    console.log("formula");
   }, [conversion, inputUnit]);
 
   const handleChangeSelect = (value) => {
@@ -49,6 +48,24 @@ export default function Converter() {
     setInputUnit(result);
   };
 
+  const hanldeSave = () => {
+    var saved;
+    const newSaved = {
+      from: conversion.from,
+      to: conversion.to,
+      unit: inputUnit,
+      result: result,
+    };
+    try {
+      saved = JSON.parse(localStorage.getItem("saved"));
+      console.log(saved);
+      saved.push(newSaved);
+      localStorage.setItem("saved", JSON.stringify(saved));
+    } catch (e) {
+      localStorage.setItem("saved", JSON.stringify([newSaved]));
+    }
+  };
+
   const kmTomiles = (km) => (km / 1.609).toFixed(2);
   const milesTokm = (miles) => (miles * 1.609).toFixed(2);
   const feetTometres = (feet) => (feet / 3.281).toFixed(2);
@@ -74,7 +91,7 @@ export default function Converter() {
         </div>
         <div>{`${result} ${conversion.to}`}</div>
         <button onClick={handleReverse}>reserve</button>
-        <button>
+        <button onClick={() => hanldeSave()}>
           <Save />
         </button>
       </div>
