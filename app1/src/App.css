@@ -12,6 +12,7 @@
 .container-wrap{
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   gap:43px;
   padding: 23px 21px;
@@ -40,9 +41,6 @@ header{
 .card{
   display: flex;
   flex-direction: column;
-  
-  /* max-width: 349px;
-  min-height: 209px; */
   box-sizing: border-box;
   
   color: #FFFFFF;
@@ -194,8 +192,8 @@ select:focus{
 }
 @media (min-width:450px){
   .container-wrap{
-    width: auto;
-    max-width: 714px; 
+    width: 100%;
+    max-width: 756px; 
     margin-left: auto;
     margin-right: auto;
   }
