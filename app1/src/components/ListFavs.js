@@ -1,6 +1,7 @@
 import React from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Cross from "./icons/Cross";
+import "../App.css"
 
 export default function ListFavs({ saved, setSaved }) {
   const handleDelete = (order) => {
@@ -15,15 +16,18 @@ export default function ListFavs({ saved, setSaved }) {
   };
 
   return (
-    <div>
-      {saved.map((item, index) => (
-        <div>
-          <div>{`${item.unit} ${item.from} → ${item.result} ${item.to}`}</div>
-          <button onClick={() => handleDelete(index)}>
-            <Cross />
-          </button>
-        </div>
-      ))}
+    <div name="saved">
+      <div className="title-saved">saved</div>
+      <div className="list-saved">
+        {saved.map((item, index) => (
+          <div name="item-saved" className="list-item-saved">
+            <div>{`${item.unit} ${item.from} → ${item.result} ${item.to}`}</div>
+            <div onClick={() => handleDelete(index)}>
+              <Cross />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

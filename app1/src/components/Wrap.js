@@ -4,7 +4,7 @@ import "../App.css";
 
 export default function Wrap() {
   return (
-    <div ffsd="container-wrap">
+    <div className="container-wrap">
       <Converter />
     </div>
   );
