@@ -77,7 +77,7 @@ export default function Converter() {
           <div name="header-card" className="grid-header">
             convert
           </div>
-          <div className="grid-item">
+          <div className="select-item">
             <select
               className="cardText"
               onChange={(e) => handleChangeSelect(e.target.value)}>
@@ -86,26 +86,26 @@ export default function Converter() {
               ))}
             </select>
           </div>
-          <div>
+          <div className="reverse-item">
             <div onClick={handleReverse}>
               <Logo />
             </div>
           </div>
-          <div className="grid-item">
+          <div className="input-item">
             <input
               name="toConvert"
               className="cardText"
               value={inputUnit}
               onChange={(e) => setInputUnit(e.target.value)}></input>
           </div>
-          <div>{conversion.from}</div>
+          <div className="to-item">{conversion.from}</div>
 
-          <div onClick={() => hanldeSave()}>
+          <div className="fav-item" onClick={() => hanldeSave()}>
             <Save />
           </div>
-          <div style={{ "text-align": "right","font-weight": "700","font-size":"24px" }}>{`${result}`}</div>
+          <div className="result-item">{`${result}`}</div>
 
-          <div style={{"font-weight": "700","font-size":"16px"}}>{`${conversion.to}`}</div>
+          <div className="from-item">{`${conversion.to}`}</div>
         </div>
       </div>
       <ListFavs saved={saved} setSaved={setSaved} />
