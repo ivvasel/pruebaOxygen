@@ -1,14 +1,14 @@
 import React from "react";
 import Logo from "./icons/Logo";
-import "../App.css"
+import "../App.css";
 
 export default function header() {
   return (
-    <header className="prueba">
+    <header>
       <div>
-        <Logo color={"currentColor"}/>
+        <Logo color={"#2E0039"} />
       </div>
-      <div>unit converter</div>
+      <div style={{ color: "#2E0039" }}>unit converter</div>
     </header>
   );
 }

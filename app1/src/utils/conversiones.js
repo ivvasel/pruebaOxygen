@@ -1,37 +1,37 @@
 export const conversiones = [
   {
     value: "kmTomiles",
-    name: "kilómetros a millas",
+    name: "km → miles",
     from: "km",
     to: "miles",
   },
   {
     value: "milesTokm",
-    name: "millas a kilómetros",
+    name: "miles → km",
     from: "miles",
     to: "km",
   },
   {
     value: "feetTometres",
-    name: "pies a metros",
+    name: "feet → metres",
     from: "feet",
     to: "metres",
   },
   {
     value: "metresTofeet",
-    name: "metros a pies",
+    name: "metres → feet",
     from: "metres",
     to: "feet",
   },
   {
     value: "cmToinches",
-    name: "centímetros a pulgadas",
+    name: "cm → inches",
     from: "cm",
     to: "inches",
   },
   {
     value: "inchesTocm",
-    name: "pulgadas a centímetros",
+    name: "inches → cm",
     from: "inches",
     to: "cm",
   },
