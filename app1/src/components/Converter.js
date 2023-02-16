@@ -71,7 +71,7 @@ export default function Converter() {
   const inchesTocm = (inches) => (inches * 2.54).toFixed(2);
 
   return (
-    <div name="converter">
+    <>
       <div name="card" className="card">
         <div name="body-card" className="grid-container">
           <div name="header-card" className="grid-header">
@@ -109,6 +109,6 @@ export default function Converter() {
         </div>
       </div>
       <ListFavs saved={saved} setSaved={setSaved} />
-    </div>
+    </>
   );
 }

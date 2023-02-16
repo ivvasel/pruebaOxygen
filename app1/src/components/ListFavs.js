@@ -16,7 +16,7 @@ export default function ListFavs({ saved, setSaved }) {
   };
 
   return (
-    <div name="saved">
+    <div name="saved" className="container-saved">
       <div className="title-saved">saved</div>
       <div className="list-saved">
         {saved.map((item, index) => (
