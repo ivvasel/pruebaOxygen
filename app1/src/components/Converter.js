@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Save from "./icons/Save";
+import Logo from "./icons/Logo";
 import { conversiones } from "../utils/conversiones";
 import useLocalStorage from "../hooks/useLocalStorage";
 import ListFavs from "./ListFavs";
+import "../App.css";
 
 export default function Converter() {
   const [conversion, setConversion] = useState(conversiones[0]);
@@ -70,25 +72,38 @@ export default function Converter() {
 
   return (
     <div name="converter">
-      <div name="header-converter">convert</div>
-      <div name="body-converter">
-        <div>
-          <select onChange={(e) => handleChangeSelect(e.target.value)}>
-            {conversiones.map((item) => (
-              <option value={item.value}>{item.name}</option>
-            ))}
-          </select>
-          <input
-            name="toConvert"
-            value={inputUnit}
-            onChange={(e) => setInputUnit(e.target.value)}></input>
-          {conversion.from}
+      <div name="card" className="card">
+        <div name="body-card" className="grid-container">
+        <div name="header-card" className="grid-header">convert</div>
+          <div>
+            <select
+              className="cardText"
+              onChange={(e) => handleChangeSelect(e.target.value)}>
+              {conversiones.map((item) => (
+                <option value={item.value}>{item.name}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <div onClick={handleReverse}><Logo/></div>
+          </div>
+          <div>
+            <input
+              name="toConvert"
+              className="cardText"
+              value={inputUnit}
+              onChange={(e) => setInputUnit(e.target.value)}></input>
+          </div>
+          <div>{conversion.from}</div>
+
+          <div>
+            <div onClick={() => hanldeSave()}>
+              <Save />
+            </div>
+            <div>{`${result}`}</div>
+          </div>
+          <div>{`${conversion.to}`}</div>
         </div>
-        <div>{`${result} ${conversion.to}`}</div>
-        <button onClick={handleReverse}>reserve</button>
-        <button onClick={() => hanldeSave()}>
-          <Save />
-        </button>
       </div>
       <ListFavs saved={saved} setSaved={setSaved} />
     </div>
