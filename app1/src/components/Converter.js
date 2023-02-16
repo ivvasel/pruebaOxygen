@@ -103,9 +103,9 @@ export default function Converter() {
           <div onClick={() => hanldeSave()}>
             <Save />
           </div>
-          <div style={{ "text-align": "right","font-weight": "bold","font-size":"24px" }}>{`${result}`}</div>
+          <div style={{ "text-align": "right","font-weight": "700","font-size":"24px" }}>{`${result}`}</div>
 
-          <div style={{"font-weight": "bold","font-size":"16px"}}>{`${conversion.to}`}</div>
+          <div style={{"font-weight": "700","font-size":"16px"}}>{`${conversion.to}`}</div>
         </div>
       </div>
       <ListFavs saved={saved} setSaved={setSaved} />
