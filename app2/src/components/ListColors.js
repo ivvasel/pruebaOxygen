@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import { CompactPicker } from "react-color";
+import Circle from "./Circle";
 import "../App.css";
 
-export default function ListPalette() {
-  const [palette, setPalette] = useState([
-    { color: "#666666", order: 1 },
-    { color: "#666666", order: 2 },
-    { color: "#666666", order: 3 },
-    { color: "#666666", order: 4 },
-    { color: "#666666", order: 5 },
-  ]);
+export default function ListColors({ palette = [], setPalette }) {
   const [selected, setSelected] = useState(0);
 
   const handlePick = (circle) => {
@@ -23,7 +17,6 @@ export default function ListPalette() {
       }
       return { ...circle };
     });
-    console.log(newPalette)
     setPalette(newPalette);
   };
 
@@ -31,12 +24,7 @@ export default function ListPalette() {
     <div>
       <div name="listColors" className="paleta">
         {palette.map((circle) => {
-          return (
-            <div
-              onClick={() => handlePick(circle)}
-              style={{ "background-color": circle.color }}
-              className="circulo"></div>
-          );
+          return <Circle circle={circle} onClick={()=>handlePick(circle)} />;
         })}
       </div>
       <div>
@@ -44,11 +32,6 @@ export default function ListPalette() {
           color={"#4D7D4D"}
           onChangeComplete={handleChangeComplete}
         />
-      </div>
-      <div name="Name">
-        <div>Name</div>
-        <input placeholder="Website color scheme"></input>
-        <button>Añadir</button>
       </div>
     </div>
   );

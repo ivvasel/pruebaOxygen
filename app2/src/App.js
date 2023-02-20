@@ -1,12 +1,11 @@
 import "./App.css";
-import ListPalette from "./components/ListPalette";
+import Wrap from "./components/Wrap";
 
 function App() {
   return (
     <div className="App">
       <header>Color palette generator</header>
-
-      <ListPalette />
+      <Wrap/>
     </div>
   );
 }
