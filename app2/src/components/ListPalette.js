@@ -10,7 +10,7 @@ export default function ListPalette() {
     { color: "#666666", order: 4 },
     { color: "#666666", order: 5 },
   ]);
-  const [selected, setSelected] = useState(palette[0]);
+  const [selected, setSelected] = useState(0);
 
   const handlePick = (circle) => {
     setSelected(circle);
@@ -44,6 +44,11 @@ export default function ListPalette() {
           color={"#4D7D4D"}
           onChangeComplete={handleChangeComplete}
         />
+      </div>
+      <div name="Name">
+        <div>Name</div>
+        <input placeholder="Website color scheme"></input>
+        <button>Añadir</button>
       </div>
     </div>
   );
