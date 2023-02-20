@@ -41,7 +41,11 @@ export default function Wrap() {
         <button onClick={handleSave}>Añadir</button>
       </div>
 
-      <ListFavs saved={saved} handlePickSaved={handlePickSaved} />
+      <ListFavs
+        saved={saved}
+        setSaved={setSaved}
+        handlePickSaved={handlePickSaved}
+      />
     </div>
   );
 }
