@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 import ListColors from "./ListColors";
 import ListFavs from "./ListFavs";
 
@@ -15,7 +16,7 @@ export default function Wrap() {
   const [palette, setPalette] = useState(initPalette(5));
   const textInput = useRef(null);
 
-  const [saved, setSaved] = useState(new Array());
+  const [saved, setSaved] = useLocalStorage("savedPalettes", new Array());
 
   const handleSave = () => {
     setSaved([...saved, { name: textInput.current.value, palette: palette }]);
@@ -24,7 +25,6 @@ export default function Wrap() {
   };
 
   const handlePickSaved = (newPalette) => {
-    console.log(newPalette);
     setPalette(newPalette.palette);
     textInput.current.value = newPalette.name;
   };

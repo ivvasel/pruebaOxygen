@@ -4,7 +4,7 @@ import Circle from "./Circle";
 export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
   return (
     <div>
-      {saved?.map((item) => {
+      {saved.map((item) => {
         return (
           <div>
             <div>{item.name}</div>
@@ -13,7 +13,6 @@ export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
               className="listPaletaSaved"
               onClick={() => handlePickSaved(item)}>
               {item.palette.map((color) => {
-                console.log(color);
                 return <Circle circle={color} className={"circuloSaved"} />;
               })}
             </div>
