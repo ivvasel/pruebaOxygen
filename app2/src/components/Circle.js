@@ -6,10 +6,10 @@ export default function Circle({
   className = "circulo",
 }) {
   return (
-    <div
+    <button
       name="circulo"
       onClick={onClick}
       style={{ backgroundColor: circle.color }}
-      className={className}></div>
+      className={className}></button>
   );
 }

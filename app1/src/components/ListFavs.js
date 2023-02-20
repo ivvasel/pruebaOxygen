@@ -1,5 +1,4 @@
 import React from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
 import Cross from "./icons/Cross";
 import "../App.css"
 
