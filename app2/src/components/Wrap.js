@@ -2,23 +2,31 @@ import React, { useRef, useState } from "react";
 import ListColors from "./ListColors";
 import ListFavs from "./ListFavs";
 
-const initColor = { color: "#4D7D4D" };
+const initColor = { color: "#999999" };
+const initPalette = (length = 5) => {
+  var init = new Array(length);
+  for (var i = 0; i < length; i++) {
+    init[i] = { ...initColor, order: i };
+  }
+  return init;
+};
 
 export default function Wrap() {
-  const [palette, setPalette] = useState(() => {
-    const lengthPalette = 5;
-    var initPalette = new Array(lengthPalette);
-    for (var i = 0; i < lengthPalette; i++) {
-      initPalette[i] = { ...initColor, order: i };
-    }
-    return initPalette;
-  });
+  const [palette, setPalette] = useState(initPalette(5));
   const textInput = useRef(null);
 
   const [saved, setSaved] = useState(new Array());
 
   const handleSave = () => {
     setSaved([...saved, { name: textInput.current.value, palette: palette }]);
+    textInput.current.value = "";
+    setPalette(initPalette());
+  };
+
+  const handlePickSaved = (newPalette) => {
+    console.log(newPalette);
+    setPalette(newPalette.palette);
+    textInput.current.value = newPalette.name;
   };
   return (
     <div>
@@ -33,7 +41,7 @@ export default function Wrap() {
         <button onClick={handleSave}>Añadir</button>
       </div>
 
-      <ListFavs saved={saved} />
+      <ListFavs saved={saved} handlePickSaved={handlePickSaved} />
     </div>
   );
 }

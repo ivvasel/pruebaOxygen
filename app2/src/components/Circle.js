@@ -10,6 +10,6 @@ export default function Circle({
       name="circulo"
       onClick={onClick}
       style={{ backgroundColor: circle.color }}
-      className="circulo"></div>
+      className={className}></div>
   );
 }

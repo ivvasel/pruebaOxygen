@@ -18,18 +18,19 @@ export default function ListColors({ palette = [], setPalette }) {
       return { ...circle };
     });
     setPalette(newPalette);
+    setSelected({ ...selected, color: newColor.hex });
   };
 
   return (
     <div>
       <div name="listColors" className="paleta">
         {palette.map((circle) => {
-          return <Circle circle={circle} onClick={()=>handlePick(circle)} />;
+          return <Circle circle={circle} onClick={() => handlePick(circle)} />;
         })}
       </div>
       <div>
         <CompactPicker
-          color={"#4D7D4D"}
+          color={selected.color}
           onChangeComplete={handleChangeComplete}
         />
       </div>
