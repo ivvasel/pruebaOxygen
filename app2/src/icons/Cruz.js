@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EmptyCircle() {
+export default function Cruz() {
   return (
     <svg
       width="50"
@@ -59,7 +59,6 @@ export default function EmptyCircle() {
             result="shape"
           />
         </filter>
-
       </defs>
     </svg>
   );
