@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import AddButton from "./AddButton";
 import ListColors from "./ListColors";
 import ListFavs from "./ListFavs";
 
@@ -31,13 +32,15 @@ export default function Wrap() {
   return (
     <div className="container-wrap">
       <ListColors palette={palette} setPalette={setPalette}>
-        <div name="Name">
-          <div>Name</div>
-          <input
-            type={"text"}
-            ref={textInput}
-            placeholder="Website color scheme"></input>
-          <button onClick={handleSave}>Añadir</button>
+        <div name="Name" className="container-input">
+          <div style={{fontWeight:"700",fontSize:"16px"}}>Name</div>
+          <div className="input-button">
+            <input
+              type={"text"}
+              ref={textInput}
+              placeholder="Website color scheme"></input>
+            <AddButton onClick={handleSave}>Añadir</AddButton>
+          </div>
         </div>
       </ListColors>
 

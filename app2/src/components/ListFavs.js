@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Trash from "../icons/Trash";
 import Circle from "./Circle";
 
 export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
@@ -11,9 +12,15 @@ export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
     <div name="favs" className="listFavs">
       {saved.map((item, index) => {
         return (
-          <div>
-            <div>{item.name}</div>
-            <button onClick={() => handleDelete(index)}>BORRAR</button>
+          <div className="cardSaved">
+            <div className="header-Palettesaved">
+              <div id="namePalette">{item.name}</div>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => handleDelete(index)}>
+                <Trash />
+              </div>
+            </div>
             <div
               name="listaColores"
               className="PaletaSaved"
