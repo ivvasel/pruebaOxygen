@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import { CompactPicker } from "react-color";
 import Circle from "./Circle";
 import "../App.css";
 
-export default function ListColors({ palette = [], setPalette }) {
+export default function ListColors({ palette = [], setPalette,children }) {
   const [selected, setSelected] = useState(0);
 
   const handlePick = (circle) => {
@@ -28,11 +28,12 @@ export default function ListColors({ palette = [], setPalette }) {
           return <Circle circle={circle} onClick={() => handlePick(circle)} />;
         })}
       </div>
-      <div>
+      <div id="inputs" className="inputs">
         <CompactPicker
           color={selected.color}
           onChangeComplete={handleChangeComplete}
         />
+        {children}
       </div>
     </div>
   );

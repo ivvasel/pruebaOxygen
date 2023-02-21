@@ -29,17 +29,17 @@ export default function Wrap() {
     textInput.current.value = newPalette.name;
   };
   return (
-    <div>
-      <ListColors palette={palette} setPalette={setPalette} />
-
-      <div name="Name">
-        <div>Name</div>
-        <input
-          type={"text"}
-          ref={textInput}
-          placeholder="Website color scheme"></input>
-        <button onClick={handleSave}>Añadir</button>
-      </div>
+    <div className="container-wrap">
+      <ListColors palette={palette} setPalette={setPalette}>
+        <div name="Name">
+          <div>Name</div>
+          <input
+            type={"text"}
+            ref={textInput}
+            placeholder="Website color scheme"></input>
+          <button onClick={handleSave}>Añadir</button>
+        </div>
+      </ListColors>
 
       <ListFavs
         saved={saved}

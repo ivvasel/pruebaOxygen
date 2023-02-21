@@ -1,5 +1,7 @@
 .App {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color:#2C2C2C;
   color:white;
@@ -12,11 +14,31 @@ header{
   font-size: 36px;
   font-weight: 700;
   line-height: 54px;
+  margin: 34px 0 56px 0;
 }
 
+.container-wrap{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1165px;
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: hidden;
+}
+.inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 88px;
+  margin: 74px 0 110px 0;
+}
 .paleta{
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 .circulo {
   display: flex;
@@ -31,10 +53,28 @@ header{
 .circulo:focus{
   transform: scale(115%);
 }
+.listFavs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap:10px;
 
-.listPaletaSaved{
+  max-width: 1165px;
+
+  overflow: auto;
+}
+.PaletaSaved{
   display: flex;
   gap:25px;
+  background: #151515;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 12px;
+  margin: 0 5px 0 5px;
+  cursor: pointer;;
+
 }
 .circuloSaved{
   display: flex;
@@ -70,10 +110,19 @@ input::placeholder{
   header{
     font-size: 24px;
     line-height: 36px;
+    margin: 14px 0 28px 0;
   }
-  
+  .listFavs{
+    justify-content: center;
+
+  }
+  .inputs{
+    gap: 21px;
+    margin: 16px 0 43px 0;
+  }
 }
 @media (min-width:450px) and (max-width:1920px){
+
   .paleta{
     gap: 36px;
   }

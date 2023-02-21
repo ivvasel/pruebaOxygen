@@ -8,7 +8,7 @@ export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
   };
 
   return (
-    <div>
+    <div name="favs" className="listFavs">
       {saved.map((item, index) => {
         return (
           <div>
@@ -16,7 +16,7 @@ export default function ListFavs({ saved = [], setSaved, handlePickSaved }) {
             <button onClick={() => handleDelete(index)}>BORRAR</button>
             <div
               name="listaColores"
-              className="listPaletaSaved"
+              className="PaletaSaved"
               onClick={() => handlePickSaved(item)}>
               {item.palette.map((color) => {
                 return <Circle circle={color} className={"circuloSaved"} />;
