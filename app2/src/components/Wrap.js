@@ -20,9 +20,14 @@ export default function Wrap() {
   const [saved, setSaved] = useLocalStorage("savedPalettes", new Array());
 
   const handleSave = () => {
-    setSaved([...saved, { name: textInput.current.value, palette: palette }]);
-    textInput.current.value = "";
-    setPalette(initPalette());
+    if (textInput.current.value === "") {
+      window.alert("Introduzca un nombre a la paleta.");
+      return
+    } 
+      setSaved([...saved, { name: textInput.current.value, palette: palette }]);
+      textInput.current.value = "";
+      setPalette(initPalette());
+    
   };
 
   const handlePickSaved = (newPalette) => {
@@ -33,7 +38,7 @@ export default function Wrap() {
     <div className="container-wrap">
       <ListColors palette={palette} setPalette={setPalette}>
         <div name="Name" className="container-input">
-          <div style={{fontWeight:"700",fontSize:"16px"}}>Name</div>
+          <div style={{ fontWeight: "700", fontSize: "16px" }}>Name</div>
           <div className="input-button">
             <input
               type={"text"}
