@@ -3,7 +3,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import ListColors from "./ListColors";
 import ListFavs from "./ListFavs";
 
-const initColor = { color: "#999999" };
+const initColor = { color: "" };
 const initPalette = (length = 5) => {
   var init = new Array(length);
   for (var i = 0; i < length; i++) {

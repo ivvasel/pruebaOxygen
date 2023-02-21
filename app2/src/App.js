@@ -1,10 +1,11 @@
 import "./App.css";
 import Wrap from "./components/Wrap";
+import Icon from "./icons/Icon";
 
 function App() {
   return (
     <div className="App">
-      <header>Color palette generator</header>
+      <header><Icon/>Color palette generator</header>
       <Wrap/>
     </div>
   );

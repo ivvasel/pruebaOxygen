@@ -1,22 +1,39 @@
 .App {
+  height: 100vh;
   text-align: center;
   background-color:#2C2C2C;
   color:white;
+  font-family: 'Poppins', sans-serif;
+}
+header{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 54px;
 }
 
 .paleta{
   display: flex;
+  justify-content: center;
 }
 .circulo {
+  display: flex;
   border-radius: 50%;
   border: 3px solid white;
-  
+  background: linear-gradient(130.53deg, #404040 17.47%, #404040 27.71%, #B0B0B0 27.72%, #B0B0B0 36.75%, #404040 36.76%, #404040 45.49%, #B0B0B0 45.5%, #B0B0B0 54.23%, #404040 54.24%, #404040 63.27%, #B0B0B0 63.27%, #B0B0B0 71.71%, #404040 71.71%),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+  justify-items: center;
+  align-items: center;
   cursor: pointer;
   box-shadow: 0px 0px 2px 2px #00000026;
 }
 .circulo:focus{
   transform: scale(115%);
 }
+
 .listPaletaSaved{
   display: flex;
   gap:25px;
@@ -47,6 +64,10 @@ input::placeholder{
   .circulo{
     width: 50px;
     height: 50px;
+  }
+  header{
+    font-size: 24px;
+    line-height: 36px;
   }
   
 }
